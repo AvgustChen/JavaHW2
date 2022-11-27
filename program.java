@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class program {
 
-    static int[] CreateArray(int size){
+    static int[] createArray(int size){
         int[] array = new int[size];
         return array;
     }
@@ -16,7 +16,7 @@ public class program {
         return array;
     }
 
-    static String PrintArray(int[] array){
+    static String printArray(int[] array){
         String result = "[";
         for (int i = 0; i < array.length; i++) {
             if (i == array.length - 1){
@@ -27,7 +27,7 @@ public class program {
         return result;
     }
 
-    static void MergeSort(int[] array){
+    static void mergeSort(int[] array){
         int n = array.length;
         if (n == 1) return;
 
@@ -42,8 +42,8 @@ public class program {
         for (int i = mid; i < n; i++) {
             right[i - mid] = array[i];
         }
-        MergeSort(left);
-        MergeSort(right);
+        mergeSort(left);
+        mergeSort(right);
         merge(array, left, right);
     }
 
@@ -72,7 +72,7 @@ public class program {
             array[index] = right[rr];
             index++;
         }
-        main.result = PrintArray(array);
+        main.result = printArray(array);
     }
 
 
