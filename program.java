@@ -35,11 +35,12 @@ public class program {
         int[] left = new int[mid];
         int[] right = new int[n - mid];
 
-        for (int i = 0; i < left.length; i++) {
+        for (int i = 0; i < mid; i++) {
             left[i] = array[i];
         }
-        for (int i = 0; i < right.length; i++) {
-            right[i] = array[i + mid];
+
+        for (int i = mid; i < n; i++) {
+            right[i - mid] = array[i];
         }
         MergeSort(left);
         MergeSort(right);
@@ -51,12 +52,12 @@ public class program {
         int j = 0;
         int index = 0;
         while (i < left.length && j < right.length){
-            if(left[i] <right[j]){
+            if(left[i] < right[j]){
                 array[index] = left[i];
                 i++;
                 index++;
             } else {
-                array[i] = right[j];
+                array[index] = right[j];
                 j++;
                 index++;
             }
